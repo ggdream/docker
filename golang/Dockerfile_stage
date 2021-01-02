@@ -1,0 +1,18 @@
+FROM golang:1.15.6 AS builder
+
+
+ENV CGO_ENABLED=0 \
+    GO111MODULE=auto \
+    GORPOXY=https://goproxy.cn,direct
+
+WORKDIR /app
+COPY . .
+
+RUN go build -o app
+
+
+
+FROM scratch
+
+COPY --from=builder /app/app /
+CMD ["/app"]
