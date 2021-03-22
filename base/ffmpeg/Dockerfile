@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 
 WORKDIR /tmp
 ENV \
-    VERSION=n4.3.1 \
+    VERSION=n4.3.2 \
     TARGET=/usr \
     TZ=Asia/Shanghai \
     SOURCE=https://gitee.com/mirrors/ffmpeg.git
